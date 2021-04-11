@@ -29,7 +29,7 @@ class CmeFuturesMdp3Sbev19Test {
         });
 
         //System.out.println(packets[0].toString());
-        assertEquals(packets[0].binaryPacketHeader.messageSequenceNumber.value, 1028094);
+        assertEquals(packets[0].binaryPacketHeader.messageSequenceNumber.value, 1028095);
     }
 
 
