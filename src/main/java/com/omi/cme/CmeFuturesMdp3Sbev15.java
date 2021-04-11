@@ -14,7 +14,7 @@ import java.util.ArrayList;
 * Java parser for Cme Futures Sbe Mdp3 1.5 protocol
 * 
 * @version 1.0
-* @since 04/04/2021 12:16:19
+* @since 04/10/2021 17:21:47
 */
 
 public class CmeFuturesMdp3Sbev15 {
@@ -615,7 +615,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshTradeSummaryOrderGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public OrderId orderId;
@@ -641,9 +641,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.orderId+"\n");
-            sb.append(this.lastQty+"\n");
-            sb.append(this.padding4+"\n");
+            sb.append(this.orderId).append("\n");
+            sb.append(this.lastQty).append("\n");
+            sb.append(this.padding4).append("\n");
             return sb.toString();
         }
     }
@@ -717,7 +717,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class GroupSize8Byte implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public BlockLength blockLength;
@@ -743,9 +743,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.blockLength+"\n");
-            sb.append(this.padding5+"\n");
-            sb.append(this.numInGroup+"\n");
+            sb.append(this.blockLength).append("\n");
+            sb.append(this.padding5).append("\n");
+            sb.append(this.numInGroup).append("\n");
             return sb.toString();
         }
     }
@@ -756,7 +756,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshTradeSummaryOrderGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize8Byte groupSize8Byte;
@@ -784,9 +784,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize8Byte+"\n");
+            sb.append(this.groupSize8Byte).append("\n");
             for (var mDIncrementalRefreshTradeSummaryOrderGroup: mDIncrementalRefreshTradeSummaryOrderGroupList) {
-                sb.append(mDIncrementalRefreshTradeSummaryOrderGroup+"\n");
+                sb.append(mDIncrementalRefreshTradeSummaryOrderGroup).append("\n");
             }
             return sb.toString();
         }
@@ -966,7 +966,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshTradeSummaryGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntryPx mdEntryPx;
@@ -1002,14 +1002,14 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntryPx+"\n");
-            sb.append(this.mdEntrySize+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.numberOfOrders+"\n");
-            sb.append(this.aggressorSide+"\n");
-            sb.append(this.mdUpdateAction+"\n");
-            sb.append(this.padding6+"\n");
+            sb.append(this.mdEntryPx).append("\n");
+            sb.append(this.mdEntrySize).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.numberOfOrders).append("\n");
+            sb.append(this.aggressorSide).append("\n");
+            sb.append(this.mdUpdateAction).append("\n");
+            sb.append(this.padding6).append("\n");
             return sb.toString();
         }
     }
@@ -1020,7 +1020,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class GroupSize implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public BlockLength blockLength;
@@ -1044,8 +1044,8 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.blockLength+"\n");
-            sb.append(this.numInGroup+"\n");
+            sb.append(this.blockLength).append("\n");
+            sb.append(this.numInGroup).append("\n");
             return sb.toString();
         }
     }
@@ -1056,7 +1056,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshTradeSummaryGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -1084,9 +1084,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshTradeSummaryGroup: mDIncrementalRefreshTradeSummaryGroupList) {
-                sb.append(mDIncrementalRefreshTradeSummaryGroup+"\n");
+                sb.append(mDIncrementalRefreshTradeSummaryGroup).append("\n");
             }
             return sb.toString();
         }
@@ -1368,7 +1368,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshTradeSummary42 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -1398,11 +1398,11 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshTradeSummaryGroups+"\n");
-            sb.append(this.mDIncrementalRefreshTradeSummaryOrderGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshTradeSummaryGroups).append("\n");
+            sb.append(this.mDIncrementalRefreshTradeSummaryOrderGroups).append("\n");
             return sb.toString();
         }
     }
@@ -1455,7 +1455,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class UnderlyingsGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public UnderlyingSecurityId underlyingSecurityId;
@@ -1479,8 +1479,8 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.underlyingSecurityId+"\n");
-            sb.append(this.underlyingSymbol+"\n");
+            sb.append(this.underlyingSecurityId).append("\n");
+            sb.append(this.underlyingSymbol).append("\n");
             return sb.toString();
         }
     }
@@ -1491,7 +1491,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class UnderlyingsGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -1519,9 +1519,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var underlyingsGroup: underlyingsGroupList) {
-                sb.append(underlyingsGroup+"\n");
+                sb.append(underlyingsGroup).append("\n");
             }
             return sb.toString();
         }
@@ -1575,7 +1575,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class LotTypeRulesGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public LotType lotType;
@@ -1599,8 +1599,8 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.lotType+"\n");
-            sb.append(this.minLotSize+"\n");
+            sb.append(this.lotType).append("\n");
+            sb.append(this.minLotSize).append("\n");
             return sb.toString();
         }
     }
@@ -1611,7 +1611,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class LotTypeRulesGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -1639,9 +1639,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var lotTypeRulesGroup: lotTypeRulesGroupList) {
-                sb.append(lotTypeRulesGroup+"\n");
+                sb.append(lotTypeRulesGroup).append("\n");
             }
             return sb.toString();
         }
@@ -2206,7 +2206,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class InstAttribGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public InstAttribValue instAttribValue;
@@ -2228,7 +2228,7 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.instAttribValue+"\n");
+            sb.append(this.instAttribValue).append("\n");
             return sb.toString();
         }
     }
@@ -2239,7 +2239,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class InstAttribGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -2267,9 +2267,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var instAttribGroup: instAttribGroupList) {
-                sb.append(instAttribGroup+"\n");
+                sb.append(instAttribGroup).append("\n");
             }
             return sb.toString();
         }
@@ -2323,7 +2323,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDFeedTypesGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdFeedType mdFeedType;
@@ -2347,8 +2347,8 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdFeedType+"\n");
-            sb.append(this.marketDepth+"\n");
+            sb.append(this.mdFeedType).append("\n");
+            sb.append(this.marketDepth).append("\n");
             return sb.toString();
         }
     }
@@ -2359,7 +2359,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDFeedTypesGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -2387,9 +2387,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDFeedTypesGroup: mDFeedTypesGroupList) {
-                sb.append(mDFeedTypesGroup+"\n");
+                sb.append(mDFeedTypesGroup).append("\n");
             }
             return sb.toString();
         }
@@ -2443,7 +2443,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class EventsGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public EventType eventType;
@@ -2467,8 +2467,8 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.eventType+"\n");
-            sb.append(this.eventTime+"\n");
+            sb.append(this.eventType).append("\n");
+            sb.append(this.eventTime).append("\n");
             return sb.toString();
         }
     }
@@ -2479,7 +2479,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class EventsGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -2507,9 +2507,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var eventsGroup: eventsGroupList) {
-                sb.append(eventsGroup+"\n");
+                sb.append(eventsGroup).append("\n");
             }
             return sb.toString();
         }
@@ -3266,7 +3266,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MaturityMonthYear implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public Year year;
@@ -3294,10 +3294,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.year+"\n");
-            sb.append(this.month+"\n");
-            sb.append(this.day+"\n");
-            sb.append(this.week+"\n");
+            sb.append(this.year).append("\n");
+            sb.append(this.month).append("\n");
+            sb.append(this.day).append("\n");
+            sb.append(this.week).append("\n");
             return sb.toString();
         }
     }
@@ -3602,7 +3602,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdInstrumentDefinitionOption41 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MatchEventIndicator matchEventIndicator;
@@ -3714,52 +3714,52 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.totNumReports+"\n");
-            sb.append(this.securityUpdateAction+"\n");
-            sb.append(this.lastUpdateTime+"\n");
-            sb.append(this.mdSecurityTradingStatus+"\n");
-            sb.append(this.applId+"\n");
-            sb.append(this.marketSegmentId+"\n");
-            sb.append(this.underlyingProduct+"\n");
-            sb.append(this.securityExchange+"\n");
-            sb.append(this.securityGroup+"\n");
-            sb.append(this.asset+"\n");
-            sb.append(this.symbol+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.securityType+"\n");
-            sb.append(this.cfiCode+"\n");
-            sb.append(this.putOrCall+"\n");
-            sb.append(this.maturityMonthYear+"\n");
-            sb.append(this.currency+"\n");
-            sb.append(this.strikePrice+"\n");
-            sb.append(this.strikeCurrency+"\n");
-            sb.append(this.settlCurrency+"\n");
-            sb.append(this.minCabPrice+"\n");
-            sb.append(this.matchAlgorithm+"\n");
-            sb.append(this.minTradeVol+"\n");
-            sb.append(this.maxTradeVol+"\n");
-            sb.append(this.minPriceIncrement+"\n");
-            sb.append(this.minPriceIncrementAmount+"\n");
-            sb.append(this.displayFactor+"\n");
-            sb.append(this.tickRule+"\n");
-            sb.append(this.mainFraction+"\n");
-            sb.append(this.subFraction+"\n");
-            sb.append(this.priceDisplayFormat+"\n");
-            sb.append(this.unitOfMeasure+"\n");
-            sb.append(this.unitOfMeasureQty+"\n");
-            sb.append(this.tradingReferencePrice+"\n");
-            sb.append(this.settlPriceType+"\n");
-            sb.append(this.clearedVolume+"\n");
-            sb.append(this.openInterestQty+"\n");
-            sb.append(this.lowLimitPrice+"\n");
-            sb.append(this.highLimitPrice+"\n");
-            sb.append(this.userDefinedInstrument+"\n");
-            sb.append(this.eventsGroups+"\n");
-            sb.append(this.mDFeedTypesGroups+"\n");
-            sb.append(this.instAttribGroups+"\n");
-            sb.append(this.lotTypeRulesGroups+"\n");
-            sb.append(this.underlyingsGroups+"\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.totNumReports).append("\n");
+            sb.append(this.securityUpdateAction).append("\n");
+            sb.append(this.lastUpdateTime).append("\n");
+            sb.append(this.mdSecurityTradingStatus).append("\n");
+            sb.append(this.applId).append("\n");
+            sb.append(this.marketSegmentId).append("\n");
+            sb.append(this.underlyingProduct).append("\n");
+            sb.append(this.securityExchange).append("\n");
+            sb.append(this.securityGroup).append("\n");
+            sb.append(this.asset).append("\n");
+            sb.append(this.symbol).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.securityType).append("\n");
+            sb.append(this.cfiCode).append("\n");
+            sb.append(this.putOrCall).append("\n");
+            sb.append(this.maturityMonthYear).append("\n");
+            sb.append(this.currency).append("\n");
+            sb.append(this.strikePrice).append("\n");
+            sb.append(this.strikeCurrency).append("\n");
+            sb.append(this.settlCurrency).append("\n");
+            sb.append(this.minCabPrice).append("\n");
+            sb.append(this.matchAlgorithm).append("\n");
+            sb.append(this.minTradeVol).append("\n");
+            sb.append(this.maxTradeVol).append("\n");
+            sb.append(this.minPriceIncrement).append("\n");
+            sb.append(this.minPriceIncrementAmount).append("\n");
+            sb.append(this.displayFactor).append("\n");
+            sb.append(this.tickRule).append("\n");
+            sb.append(this.mainFraction).append("\n");
+            sb.append(this.subFraction).append("\n");
+            sb.append(this.priceDisplayFormat).append("\n");
+            sb.append(this.unitOfMeasure).append("\n");
+            sb.append(this.unitOfMeasureQty).append("\n");
+            sb.append(this.tradingReferencePrice).append("\n");
+            sb.append(this.settlPriceType).append("\n");
+            sb.append(this.clearedVolume).append("\n");
+            sb.append(this.openInterestQty).append("\n");
+            sb.append(this.lowLimitPrice).append("\n");
+            sb.append(this.highLimitPrice).append("\n");
+            sb.append(this.userDefinedInstrument).append("\n");
+            sb.append(this.eventsGroups).append("\n");
+            sb.append(this.mDFeedTypesGroups).append("\n");
+            sb.append(this.instAttribGroups).append("\n");
+            sb.append(this.lotTypeRulesGroups).append("\n");
+            sb.append(this.underlyingsGroups).append("\n");
             return sb.toString();
         }
     }
@@ -3833,7 +3833,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class RelatedSymGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public Symbol symbol;
@@ -3865,12 +3865,12 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.symbol+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.orderQty+"\n");
-            sb.append(this.quoteType+"\n");
-            sb.append(this.side+"\n");
-            sb.append(this.padding2+"\n");
+            sb.append(this.symbol).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.orderQty).append("\n");
+            sb.append(this.quoteType).append("\n");
+            sb.append(this.side).append("\n");
+            sb.append(this.padding2).append("\n");
             return sb.toString();
         }
     }
@@ -3881,7 +3881,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class RelatedSymGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -3909,9 +3909,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var relatedSymGroup: relatedSymGroupList) {
-                sb.append(relatedSymGroup+"\n");
+                sb.append(relatedSymGroup).append("\n");
             }
             return sb.toString();
         }
@@ -3965,7 +3965,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class QuoteRequest39 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -3995,11 +3995,11 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.quoteReqId+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding3+"\n");
-            sb.append(this.relatedSymGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.quoteReqId).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding3).append("\n");
+            sb.append(this.relatedSymGroups).append("\n");
             return sb.toString();
         }
     }
@@ -4094,7 +4094,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class SnapshotFullRefreshGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntryPx mdEntryPx;
@@ -4130,14 +4130,14 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntryPx+"\n");
-            sb.append(this.mdEntrySize+"\n");
-            sb.append(this.numberOfOrders+"\n");
-            sb.append(this.mdPriceLevel+"\n");
-            sb.append(this.tradingReferenceDate+"\n");
-            sb.append(this.openCloseSettlFlag+"\n");
-            sb.append(this.settlPriceType+"\n");
-            sb.append(this.mdEntryType+"\n");
+            sb.append(this.mdEntryPx).append("\n");
+            sb.append(this.mdEntrySize).append("\n");
+            sb.append(this.numberOfOrders).append("\n");
+            sb.append(this.mdPriceLevel).append("\n");
+            sb.append(this.tradingReferenceDate).append("\n");
+            sb.append(this.openCloseSettlFlag).append("\n");
+            sb.append(this.settlPriceType).append("\n");
+            sb.append(this.mdEntryType).append("\n");
             return sb.toString();
         }
     }
@@ -4148,7 +4148,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class SnapshotFullRefreshGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -4176,9 +4176,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var snapshotFullRefreshGroup: snapshotFullRefreshGroupList) {
-                sb.append(snapshotFullRefreshGroup+"\n");
+                sb.append(snapshotFullRefreshGroup).append("\n");
             }
             return sb.toString();
         }
@@ -4253,7 +4253,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class SnapshotFullRefresh38 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public LastMsgSeqNumProcessed lastMsgSeqNumProcessed;
@@ -4297,18 +4297,18 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.lastMsgSeqNumProcessed+"\n");
-            sb.append(this.totNumReports+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.transactTime+"\n");
-            sb.append(this.lastUpdateTime+"\n");
-            sb.append(this.tradeDate+"\n");
-            sb.append(this.mdSecurityTradingStatus+"\n");
-            sb.append(this.highLimitPrice+"\n");
-            sb.append(this.lowLimitPrice+"\n");
-            sb.append(this.maxPriceVariation+"\n");
-            sb.append(this.snapshotFullRefreshGroups+"\n");
+            sb.append(this.lastMsgSeqNumProcessed).append("\n");
+            sb.append(this.totNumReports).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.lastUpdateTime).append("\n");
+            sb.append(this.tradeDate).append("\n");
+            sb.append(this.mdSecurityTradingStatus).append("\n");
+            sb.append(this.highLimitPrice).append("\n");
+            sb.append(this.lowLimitPrice).append("\n");
+            sb.append(this.maxPriceVariation).append("\n");
+            sb.append(this.snapshotFullRefreshGroups).append("\n");
             return sb.toString();
         }
     }
@@ -4319,7 +4319,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshVolumeGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntrySize mdEntrySize;
@@ -4349,11 +4349,11 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntrySize+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.mdUpdateAction+"\n");
-            sb.append(this.padding3+"\n");
+            sb.append(this.mdEntrySize).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.mdUpdateAction).append("\n");
+            sb.append(this.padding3).append("\n");
             return sb.toString();
         }
     }
@@ -4364,7 +4364,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshVolumeGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -4392,9 +4392,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshVolumeGroup: mDIncrementalRefreshVolumeGroupList) {
-                sb.append(mDIncrementalRefreshVolumeGroup+"\n");
+                sb.append(mDIncrementalRefreshVolumeGroup).append("\n");
             }
             return sb.toString();
         }
@@ -4406,7 +4406,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshVolume37 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -4434,10 +4434,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshVolumeGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshVolumeGroups).append("\n");
             return sb.toString();
         }
     }
@@ -4469,7 +4469,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshTradeGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntryPx mdEntryPx;
@@ -4507,15 +4507,15 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntryPx+"\n");
-            sb.append(this.mdEntrySize+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.numberOfOrders+"\n");
-            sb.append(this.tradeId+"\n");
-            sb.append(this.aggressorSide+"\n");
-            sb.append(this.mdUpdateAction+"\n");
-            sb.append(this.padding2+"\n");
+            sb.append(this.mdEntryPx).append("\n");
+            sb.append(this.mdEntrySize).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.numberOfOrders).append("\n");
+            sb.append(this.tradeId).append("\n");
+            sb.append(this.aggressorSide).append("\n");
+            sb.append(this.mdUpdateAction).append("\n");
+            sb.append(this.padding2).append("\n");
             return sb.toString();
         }
     }
@@ -4526,7 +4526,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshTradeGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -4554,9 +4554,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshTradeGroup: mDIncrementalRefreshTradeGroupList) {
-                sb.append(mDIncrementalRefreshTradeGroup+"\n");
+                sb.append(mDIncrementalRefreshTradeGroup).append("\n");
             }
             return sb.toString();
         }
@@ -4568,7 +4568,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshTrade36 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -4596,10 +4596,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshTradeGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshTradeGroups).append("\n");
             return sb.toString();
         }
     }
@@ -4631,7 +4631,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshSessionStatisticsGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntryPx mdEntryPx;
@@ -4665,13 +4665,13 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntryPx+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.openCloseSettlFlag+"\n");
-            sb.append(this.mdUpdateAction+"\n");
-            sb.append(this.mdEntryTypeStatistics+"\n");
-            sb.append(this.padding5+"\n");
+            sb.append(this.mdEntryPx).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.openCloseSettlFlag).append("\n");
+            sb.append(this.mdUpdateAction).append("\n");
+            sb.append(this.mdEntryTypeStatistics).append("\n");
+            sb.append(this.padding5).append("\n");
             return sb.toString();
         }
     }
@@ -4682,7 +4682,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshSessionStatisticsGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -4710,9 +4710,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshSessionStatisticsGroup: mDIncrementalRefreshSessionStatisticsGroupList) {
-                sb.append(mDIncrementalRefreshSessionStatisticsGroup+"\n");
+                sb.append(mDIncrementalRefreshSessionStatisticsGroup).append("\n");
             }
             return sb.toString();
         }
@@ -4724,7 +4724,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshSessionStatistics35 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -4752,10 +4752,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshSessionStatisticsGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshSessionStatisticsGroups).append("\n");
             return sb.toString();
         }
     }
@@ -4766,7 +4766,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshLimitsBandingGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public HighLimitPrice highLimitPrice;
@@ -4796,11 +4796,11 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.highLimitPrice+"\n");
-            sb.append(this.lowLimitPrice+"\n");
-            sb.append(this.maxPriceVariation+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
+            sb.append(this.highLimitPrice).append("\n");
+            sb.append(this.lowLimitPrice).append("\n");
+            sb.append(this.maxPriceVariation).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
             return sb.toString();
         }
     }
@@ -4811,7 +4811,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshLimitsBandingGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -4839,9 +4839,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshLimitsBandingGroup: mDIncrementalRefreshLimitsBandingGroupList) {
-                sb.append(mDIncrementalRefreshLimitsBandingGroup+"\n");
+                sb.append(mDIncrementalRefreshLimitsBandingGroup).append("\n");
             }
             return sb.toString();
         }
@@ -4853,7 +4853,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshLimitsBanding34 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -4881,10 +4881,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshLimitsBandingGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshLimitsBandingGroups).append("\n");
             return sb.toString();
         }
     }
@@ -4937,7 +4937,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshDailyStatisticsGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntryPx mdEntryPx;
@@ -4975,15 +4975,15 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntryPx+"\n");
-            sb.append(this.mdEntrySize+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.tradingReferenceDate+"\n");
-            sb.append(this.settlPriceType+"\n");
-            sb.append(this.mdUpdateAction+"\n");
-            sb.append(this.mdEntryTypeDailyStatistics+"\n");
-            sb.append(this.padding7+"\n");
+            sb.append(this.mdEntryPx).append("\n");
+            sb.append(this.mdEntrySize).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.tradingReferenceDate).append("\n");
+            sb.append(this.settlPriceType).append("\n");
+            sb.append(this.mdUpdateAction).append("\n");
+            sb.append(this.mdEntryTypeDailyStatistics).append("\n");
+            sb.append(this.padding7).append("\n");
             return sb.toString();
         }
     }
@@ -4994,7 +4994,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshDailyStatisticsGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -5022,9 +5022,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshDailyStatisticsGroup: mDIncrementalRefreshDailyStatisticsGroupList) {
-                sb.append(mDIncrementalRefreshDailyStatisticsGroup+"\n");
+                sb.append(mDIncrementalRefreshDailyStatisticsGroup).append("\n");
             }
             return sb.toString();
         }
@@ -5036,7 +5036,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshDailyStatistics33 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -5064,10 +5064,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshDailyStatisticsGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshDailyStatisticsGroups).append("\n");
             return sb.toString();
         }
     }
@@ -5099,7 +5099,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshBookGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MdEntryPx mdEntryPx;
@@ -5137,15 +5137,15 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.mdEntryPx+"\n");
-            sb.append(this.mdEntrySize+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.rptSeq+"\n");
-            sb.append(this.numberOfOrders+"\n");
-            sb.append(this.mdPriceLevel+"\n");
-            sb.append(this.mdUpdateAction+"\n");
-            sb.append(this.mdEntryTypeBook+"\n");
-            sb.append(this.padding5+"\n");
+            sb.append(this.mdEntryPx).append("\n");
+            sb.append(this.mdEntrySize).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.rptSeq).append("\n");
+            sb.append(this.numberOfOrders).append("\n");
+            sb.append(this.mdPriceLevel).append("\n");
+            sb.append(this.mdUpdateAction).append("\n");
+            sb.append(this.mdEntryTypeBook).append("\n");
+            sb.append(this.padding5).append("\n");
             return sb.toString();
         }
     }
@@ -5156,7 +5156,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDIncrementalRefreshBookGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -5184,9 +5184,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDIncrementalRefreshBookGroup: mDIncrementalRefreshBookGroupList) {
-                sb.append(mDIncrementalRefreshBookGroup+"\n");
+                sb.append(mDIncrementalRefreshBookGroup).append("\n");
             }
             return sb.toString();
         }
@@ -5198,7 +5198,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdIncrementalRefreshBook32 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -5226,10 +5226,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.padding2+"\n");
-            sb.append(this.mDIncrementalRefreshBookGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.padding2).append("\n");
+            sb.append(this.mDIncrementalRefreshBookGroups).append("\n");
             return sb.toString();
         }
     }
@@ -5303,7 +5303,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class SecurityStatus30 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -5341,15 +5341,15 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.securityGroup+"\n");
-            sb.append(this.asset+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.tradeDate+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.securityTradingStatus+"\n");
-            sb.append(this.haltReason+"\n");
-            sb.append(this.securityTradingEvent+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.securityGroup).append("\n");
+            sb.append(this.asset).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.tradeDate).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.securityTradingStatus).append("\n");
+            sb.append(this.haltReason).append("\n");
+            sb.append(this.securityTradingEvent).append("\n");
             return sb.toString();
         }
     }
@@ -5465,7 +5465,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDInstrumentDefinitionSpreadLegGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public LegSecurityId legSecurityId;
@@ -5495,11 +5495,11 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.legSecurityId+"\n");
-            sb.append(this.legSide+"\n");
-            sb.append(this.legRatioQty+"\n");
-            sb.append(this.legPrice+"\n");
-            sb.append(this.legOptionDelta+"\n");
+            sb.append(this.legSecurityId).append("\n");
+            sb.append(this.legSide).append("\n");
+            sb.append(this.legRatioQty).append("\n");
+            sb.append(this.legPrice).append("\n");
+            sb.append(this.legOptionDelta).append("\n");
             return sb.toString();
         }
     }
@@ -5510,7 +5510,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MDInstrumentDefinitionSpreadLegGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -5538,9 +5538,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var mDInstrumentDefinitionSpreadLegGroup: mDInstrumentDefinitionSpreadLegGroupList) {
-                sb.append(mDInstrumentDefinitionSpreadLegGroup+"\n");
+                sb.append(mDInstrumentDefinitionSpreadLegGroup).append("\n");
             }
             return sb.toString();
         }
@@ -5594,7 +5594,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdInstrumentDefinitionSpread29 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MatchEventIndicator matchEventIndicator;
@@ -5698,48 +5698,48 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.totNumReports+"\n");
-            sb.append(this.securityUpdateAction+"\n");
-            sb.append(this.lastUpdateTime+"\n");
-            sb.append(this.mdSecurityTradingStatus+"\n");
-            sb.append(this.applId+"\n");
-            sb.append(this.marketSegmentId+"\n");
-            sb.append(this.underlyingProduct+"\n");
-            sb.append(this.securityExchange+"\n");
-            sb.append(this.securityGroup+"\n");
-            sb.append(this.asset+"\n");
-            sb.append(this.symbol+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.securityType+"\n");
-            sb.append(this.cfiCode+"\n");
-            sb.append(this.maturityMonthYear+"\n");
-            sb.append(this.currency+"\n");
-            sb.append(this.securitySubType+"\n");
-            sb.append(this.userDefinedInstrument+"\n");
-            sb.append(this.matchAlgorithm+"\n");
-            sb.append(this.minTradeVol+"\n");
-            sb.append(this.maxTradeVol+"\n");
-            sb.append(this.minPriceIncrement+"\n");
-            sb.append(this.displayFactor+"\n");
-            sb.append(this.priceDisplayFormat+"\n");
-            sb.append(this.priceRatio+"\n");
-            sb.append(this.tickRule+"\n");
-            sb.append(this.unitOfMeasure+"\n");
-            sb.append(this.tradingReferencePrice+"\n");
-            sb.append(this.settlPriceType+"\n");
-            sb.append(this.openInterestQty+"\n");
-            sb.append(this.clearedVolume+"\n");
-            sb.append(this.highLimitPrice+"\n");
-            sb.append(this.lowLimitPrice+"\n");
-            sb.append(this.maxPriceVariation+"\n");
-            sb.append(this.mainFraction+"\n");
-            sb.append(this.subFraction+"\n");
-            sb.append(this.eventsGroups+"\n");
-            sb.append(this.mDFeedTypesGroups+"\n");
-            sb.append(this.instAttribGroups+"\n");
-            sb.append(this.lotTypeRulesGroups+"\n");
-            sb.append(this.mDInstrumentDefinitionSpreadLegGroups+"\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.totNumReports).append("\n");
+            sb.append(this.securityUpdateAction).append("\n");
+            sb.append(this.lastUpdateTime).append("\n");
+            sb.append(this.mdSecurityTradingStatus).append("\n");
+            sb.append(this.applId).append("\n");
+            sb.append(this.marketSegmentId).append("\n");
+            sb.append(this.underlyingProduct).append("\n");
+            sb.append(this.securityExchange).append("\n");
+            sb.append(this.securityGroup).append("\n");
+            sb.append(this.asset).append("\n");
+            sb.append(this.symbol).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.securityType).append("\n");
+            sb.append(this.cfiCode).append("\n");
+            sb.append(this.maturityMonthYear).append("\n");
+            sb.append(this.currency).append("\n");
+            sb.append(this.securitySubType).append("\n");
+            sb.append(this.userDefinedInstrument).append("\n");
+            sb.append(this.matchAlgorithm).append("\n");
+            sb.append(this.minTradeVol).append("\n");
+            sb.append(this.maxTradeVol).append("\n");
+            sb.append(this.minPriceIncrement).append("\n");
+            sb.append(this.displayFactor).append("\n");
+            sb.append(this.priceDisplayFormat).append("\n");
+            sb.append(this.priceRatio).append("\n");
+            sb.append(this.tickRule).append("\n");
+            sb.append(this.unitOfMeasure).append("\n");
+            sb.append(this.tradingReferencePrice).append("\n");
+            sb.append(this.settlPriceType).append("\n");
+            sb.append(this.openInterestQty).append("\n");
+            sb.append(this.clearedVolume).append("\n");
+            sb.append(this.highLimitPrice).append("\n");
+            sb.append(this.lowLimitPrice).append("\n");
+            sb.append(this.maxPriceVariation).append("\n");
+            sb.append(this.mainFraction).append("\n");
+            sb.append(this.subFraction).append("\n");
+            sb.append(this.eventsGroups).append("\n");
+            sb.append(this.mDFeedTypesGroups).append("\n");
+            sb.append(this.instAttribGroups).append("\n");
+            sb.append(this.lotTypeRulesGroups).append("\n");
+            sb.append(this.mDInstrumentDefinitionSpreadLegGroups).append("\n");
             return sb.toString();
         }
     }
@@ -5876,7 +5876,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MdInstrumentDefinitionFuture27 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MatchEventIndicator matchEventIndicator;
@@ -5990,53 +5990,53 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.totNumReports+"\n");
-            sb.append(this.securityUpdateAction+"\n");
-            sb.append(this.lastUpdateTime+"\n");
-            sb.append(this.mdSecurityTradingStatus+"\n");
-            sb.append(this.applId+"\n");
-            sb.append(this.marketSegmentId+"\n");
-            sb.append(this.underlyingProduct+"\n");
-            sb.append(this.securityExchange+"\n");
-            sb.append(this.securityGroup+"\n");
-            sb.append(this.asset+"\n");
-            sb.append(this.symbol+"\n");
-            sb.append(this.securityId+"\n");
-            sb.append(this.securityType+"\n");
-            sb.append(this.cfiCode+"\n");
-            sb.append(this.maturityMonthYear+"\n");
-            sb.append(this.currency+"\n");
-            sb.append(this.settlCurrency+"\n");
-            sb.append(this.matchAlgorithm+"\n");
-            sb.append(this.minTradeVol+"\n");
-            sb.append(this.maxTradeVol+"\n");
-            sb.append(this.minPriceIncrement+"\n");
-            sb.append(this.displayFactor+"\n");
-            sb.append(this.mainFraction+"\n");
-            sb.append(this.subFraction+"\n");
-            sb.append(this.priceDisplayFormat+"\n");
-            sb.append(this.unitOfMeasure+"\n");
-            sb.append(this.unitOfMeasureQty+"\n");
-            sb.append(this.tradingReferencePrice+"\n");
-            sb.append(this.settlPriceType+"\n");
-            sb.append(this.openInterestQty+"\n");
-            sb.append(this.clearedVolume+"\n");
-            sb.append(this.highLimitPrice+"\n");
-            sb.append(this.lowLimitPrice+"\n");
-            sb.append(this.maxPriceVariation+"\n");
-            sb.append(this.decayQuantity+"\n");
-            sb.append(this.decayStartDate+"\n");
-            sb.append(this.originalContractSize+"\n");
-            sb.append(this.contractMultiplier+"\n");
-            sb.append(this.contractMultiplierUnit+"\n");
-            sb.append(this.flowScheduleType+"\n");
-            sb.append(this.minPriceIncrementAmount+"\n");
-            sb.append(this.userDefinedInstrument+"\n");
-            sb.append(this.eventsGroups+"\n");
-            sb.append(this.mDFeedTypesGroups+"\n");
-            sb.append(this.instAttribGroups+"\n");
-            sb.append(this.lotTypeRulesGroups+"\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.totNumReports).append("\n");
+            sb.append(this.securityUpdateAction).append("\n");
+            sb.append(this.lastUpdateTime).append("\n");
+            sb.append(this.mdSecurityTradingStatus).append("\n");
+            sb.append(this.applId).append("\n");
+            sb.append(this.marketSegmentId).append("\n");
+            sb.append(this.underlyingProduct).append("\n");
+            sb.append(this.securityExchange).append("\n");
+            sb.append(this.securityGroup).append("\n");
+            sb.append(this.asset).append("\n");
+            sb.append(this.symbol).append("\n");
+            sb.append(this.securityId).append("\n");
+            sb.append(this.securityType).append("\n");
+            sb.append(this.cfiCode).append("\n");
+            sb.append(this.maturityMonthYear).append("\n");
+            sb.append(this.currency).append("\n");
+            sb.append(this.settlCurrency).append("\n");
+            sb.append(this.matchAlgorithm).append("\n");
+            sb.append(this.minTradeVol).append("\n");
+            sb.append(this.maxTradeVol).append("\n");
+            sb.append(this.minPriceIncrement).append("\n");
+            sb.append(this.displayFactor).append("\n");
+            sb.append(this.mainFraction).append("\n");
+            sb.append(this.subFraction).append("\n");
+            sb.append(this.priceDisplayFormat).append("\n");
+            sb.append(this.unitOfMeasure).append("\n");
+            sb.append(this.unitOfMeasureQty).append("\n");
+            sb.append(this.tradingReferencePrice).append("\n");
+            sb.append(this.settlPriceType).append("\n");
+            sb.append(this.openInterestQty).append("\n");
+            sb.append(this.clearedVolume).append("\n");
+            sb.append(this.highLimitPrice).append("\n");
+            sb.append(this.lowLimitPrice).append("\n");
+            sb.append(this.maxPriceVariation).append("\n");
+            sb.append(this.decayQuantity).append("\n");
+            sb.append(this.decayStartDate).append("\n");
+            sb.append(this.originalContractSize).append("\n");
+            sb.append(this.contractMultiplier).append("\n");
+            sb.append(this.contractMultiplierUnit).append("\n");
+            sb.append(this.flowScheduleType).append("\n");
+            sb.append(this.minPriceIncrementAmount).append("\n");
+            sb.append(this.userDefinedInstrument).append("\n");
+            sb.append(this.eventsGroups).append("\n");
+            sb.append(this.mDFeedTypesGroups).append("\n");
+            sb.append(this.instAttribGroups).append("\n");
+            sb.append(this.lotTypeRulesGroups).append("\n");
             return sb.toString();
         }
     }
@@ -6068,7 +6068,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class AdminLogout16 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public Text text;
@@ -6090,7 +6090,7 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.text+"\n");
+            sb.append(this.text).append("\n");
             return sb.toString();
         }
     }
@@ -6122,7 +6122,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class AdminLogin15 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public HeartBtInt heartBtInt;
@@ -6144,7 +6144,7 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.heartBtInt+"\n");
+            sb.append(this.heartBtInt).append("\n");
             return sb.toString();
         }
     }
@@ -6155,7 +6155,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class ChannelResetGroup implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public ApplId applId;
@@ -6177,7 +6177,7 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.applId+"\n");
+            sb.append(this.applId).append("\n");
             return sb.toString();
         }
     }
@@ -6188,7 +6188,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class ChannelResetGroups implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public GroupSize groupSize;
@@ -6216,9 +6216,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.groupSize+"\n");
+            sb.append(this.groupSize).append("\n");
             for (var channelResetGroup: channelResetGroupList) {
-                sb.append(channelResetGroup+"\n");
+                sb.append(channelResetGroup).append("\n");
             }
             return sb.toString();
         }
@@ -6230,7 +6230,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class ChannelReset4 implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public TransactTime transactTime;
@@ -6256,9 +6256,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.transactTime+"\n");
-            sb.append(this.matchEventIndicator+"\n");
-            sb.append(this.channelResetGroups+"\n");
+            sb.append(this.transactTime).append("\n");
+            sb.append(this.matchEventIndicator).append("\n");
+            sb.append(this.channelResetGroups).append("\n");
             return sb.toString();
         }
     }
@@ -6411,7 +6411,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class MessageHeader implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public BlockLength blockLength;
@@ -6439,10 +6439,10 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.blockLength+"\n");
-            sb.append(this.templateId+"\n");
-            sb.append(this.schemaId+"\n");
-            sb.append(this.version+"\n");
+            sb.append(this.blockLength).append("\n");
+            sb.append(this.templateId).append("\n");
+            sb.append(this.schemaId).append("\n");
+            sb.append(this.version).append("\n");
             return sb.toString();
         }
     }
@@ -6552,7 +6552,7 @@ public class CmeFuturesMdp3Sbev15 {
     public static class BinaryPacketHeader implements Payload {
 
         // parent element
-        private final IBinaryProtocolElement parent;
+        public final IBinaryProtocolElement parent;
 
         // fields
         public MessageSequenceNumber messageSequenceNumber;
@@ -6576,8 +6576,8 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.messageSequenceNumber+"\n");
-            sb.append(this.sendingTime+"\n");
+            sb.append(this.messageSequenceNumber).append("\n");
+            sb.append(this.sendingTime).append("\n");
             return sb.toString();
         }
     }
@@ -6621,9 +6621,9 @@ public class CmeFuturesMdp3Sbev15 {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.binaryPacketHeader+"\n");
+            sb.append(this.binaryPacketHeader).append("\n");
             for (var message: messageList) {
-                sb.append(message+"\n");
+                sb.append(message).append("\n");
             }
             return sb.toString();
         }
